@@ -1,10 +1,11 @@
 package lib.cat.chapter2;
 
-import lib.cat.stdlib.In;
 import lib.cat.stdlib.StdOut;
 
-public class Example {
-	public static void sort(Comparable[] a) {
+public class Template {
+	
+	public static Comparable[] sort(Comparable[] a) {
+		return a;
 	}
 
 	public static boolean less(Comparable v, Comparable w) {
@@ -33,10 +34,5 @@ public class Example {
 		return true;
 	}
 
-	public static void main(String[] args) {
-		String[] a = In.readStrings();
-		sort(a);
-		assert isSorted(a);
-		show(a);
-	}
+	
 }
