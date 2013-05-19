@@ -1,6 +1,7 @@
 package lib.cat.chapter3;
 
-public class BinarySearchST<Key extends Comparable<Key>, Value> extends ST<Key, Value> {
+public class BinarySearchST<Key extends Comparable<Key>, Value> extends
+		ST<Key, Value> {
 	private Key[] keys;
 	private Value[] vals;
 	private int N;
@@ -15,8 +16,19 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> extends ST<Key, 
 	}
 
 	public int rank(Key key) {
-		// TODO Auto-generated method stub
-		return 0;
+		int lo = 0, hi = N - 1;
+		while (lo <= hi) {
+			int mid = lo + (hi - lo) / 2;
+			int cmp = key.compareTo(keys[mid]);
+			if (cmp < 0) {
+				hi = mid - 1;
+			} else if (cmp > 0) {
+				lo = mid + 1;
+			} else {
+				return mid;
+			}
+		}
+		return lo;
 	}
 
 	public Value get(Key key) {

@@ -31,11 +31,11 @@ public class ST<Key extends Comparable<Key>, Value> {
 	}
 
 	public Key min() {
-		return key;
+		return keys[0];
 	}
 
 	public Key max() {
-		return key;
+		return keys[N-1];
 	}
 
 	public Key floor(Key key) {
